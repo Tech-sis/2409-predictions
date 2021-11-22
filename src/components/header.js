@@ -7,16 +7,16 @@ const Header = () => {
       <nav className={styles.nav}>
         <ul className={styles.ul}>
           <li className={styles.list}>
-            <Link to="/">Sports</Link>
+            <Link to="/sports">Sports</Link>
           </li>
           <li className={styles.list}>
             <Link to="/">Fixtures</Link>
           </li>
           <li className={styles.list}>
-            <Link to="/">Odds</Link>
+            <Link to="/odds">Odds</Link>
           </li>
           <li className={styles.list}>
-            <Link to="/">Market</Link>
+            <Link to="/market">Market</Link>
           </li>
           <li className={styles.list}>
             <Link to="/login">Login</Link>
