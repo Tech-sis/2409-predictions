@@ -1,8 +1,6 @@
 import React from 'react'
 import { Table, Tag } from 'antd'
-// import styles from '../styles/home.module.css'
-// import Fixturehome from '../pages/fixturehome';
-import { Link } from 'react-router-dom';
+import styles from '../styles/home.module.css'
 
 const columns = [
   {
@@ -11,13 +9,6 @@ const columns = [
     key: 'i',
     width: 150,
     fixed: 'left',
-    render: (text, record) => (
-      <span>
-        {record.time && <Tag color="blue" >{record.time}</Tag>}
-        {record.date && <Tag color="blue">{record.date}</Tag>}
-        <Link to={'./fixture'}>{text}</Link>
-      </span>
-    ),
   },
   {
     title: '1X2',
@@ -28,47 +19,47 @@ const columns = [
         width: 100,
         dataIndex: 'tags',
         render: (tags) => (
-          <span> 
+          <span>
             {tags.map((tag) => {
-              let color = tag >= '90%' ? 'green' : 'red';
+              let color = tag >= '90%' ? 'green' : 'red'
               if (tag >= '90%') {
-                color = 'green';
-              } else if (tag <= '50%') {  
-                color = 'red';
+                color = 'green'
+              } else if (tag <= '50%') {
+                color = 'red'
               } else {
-                color = 'black';
+                color = 'black'
               }
               return (
                 <Tag color={color} key={tag}>
                   {tag}
                 </Tag>
-              );
+              )
             })}
           </span>
         ),
       },
-    {
+      {
         title: 'X',
         dataIndex: 'tags',
         key: 'i',
         width: 100,
         tags: '50%',
         render: (tags) => (
-          <span> 
+          <span>
             {tags.map((tag) => {
-              let color = tag >= '90%' ? 'green' : 'red';
+              let color = tag >= '90%' ? 'green' : 'red'
               if (tag >= '90%') {
-                color = 'green';
-              } else if (tag <= '50%') {  
-                color = 'red';
+                color = 'green'
+              } else if (tag <= '50%') {
+                color = 'red'
               } else {
-                color = 'black';
+                color = 'black'
               }
               return (
                 <Tag color={color} key={tag}>
                   {tag}
                 </Tag>
-              );
+              )
             })}
           </span>
         ),
@@ -257,22 +248,22 @@ for (let i = 0; i <= 9; i++) {
     date: '20 Nov',
     tags: ['90%'],
     fail: '1.3',
-    pass: '1.7'
+    pass: '1.7',
   })
 }
 
-const Fixtures = () => {
-    return (
-      <div>
-        <Table
-          columns={columns}
-          dataSource={data}
-          scroll={{ y: 500 }}
-          bordered
-          size="small"
-        />
-      </div>
-    )
+const Head2Head = () => {
+  return (
+    <div>
+      <Table
+        columns={columns}
+        dataSource={data}
+        scroll={{ y: 500 }}
+        bordered
+        size="small"
+      />
+    </div>
+  )
 }
 
-export default Fixtures
+export default Head2Head

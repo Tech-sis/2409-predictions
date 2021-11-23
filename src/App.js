@@ -8,6 +8,7 @@ import Header from './components/header';
 // Pages
 import Home from './pages/home';
 import Login from './pages/login';
+import Fixture from './pages/fixturehome'
 
 function App () {
   return (
@@ -15,10 +16,11 @@ function App () {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="login" element={<Login />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/fixture" element={<Fixture />} />
       </Routes>
     </Router>
-  );
+  )
 }
 
 export default App;

@@ -5,7 +5,7 @@ import styles from '../styles/home.module.css'
 const Home = () => {
     return (
         <div className={styles.fix}>
-            <h1>Home</h1>
+            {/* <h1>Home</h1> */}
             <Fixtures />
         </div>
     )
