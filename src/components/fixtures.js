@@ -1,8 +1,7 @@
 import React from 'react'
 import { Table, Tag } from 'antd'
-// import styles from '../styles/home.module.css'
-// import Fixturehome from '../pages/fixturehome';
 import { Link } from 'react-router-dom';
+import styles from '../styles/home.module.css'
 
 const columns = [
   {
@@ -18,6 +17,7 @@ const columns = [
         <Link to={'./fixture'}>{text}</Link>
       </span>
     ),
+    responsive: ['sm']
   },
   {
     title: '1X2',
@@ -255,7 +255,7 @@ for (let i = 0; i <= 9; i++) {
     club: 'Leicester city vs Chelsea',
     time: '16:00',
     date: '20 Nov',
-    tags: ['90%'],
+    tags: ['90%', ],
     fail: '1.3',
     pass: '1.7'
   })
@@ -266,10 +266,13 @@ const Fixtures = () => {
       <div>
         <Table
           columns={columns}
+          // align="center"
           dataSource={data}
           scroll={{ y: 500 }}
           bordered
           size="small"
+          className={styles.table}
+        //  style={{textAlign: 'center'}}
         />
       </div>
     )

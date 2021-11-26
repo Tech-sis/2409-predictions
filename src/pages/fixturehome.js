@@ -8,9 +8,8 @@ import styles from '../styles/home.module.css'
 const Fixturehome = () => {
     return (
         <div className={styles.fix}>
-            {/* <Header /> */}
+            <h1 className={styles.h1}>Recent Games</h1>
             <Home />
-            <Away />
             <Head2Head />
         </div>
         

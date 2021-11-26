@@ -13,3 +13,27 @@ body{
     /* padding: auto; */
     margin-bottom: 10px;
 }
+
+.table{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.h1{
+    background-color: white;
+    text-align: center;
+    margin:auto;
+    color: #242582;
+    width: 250px;
+}
+
+@media screen and (max-width: 600px) {
+    .fix{
+        width: 80%;
+    }
+    .table{
+        margin-top: 10px;
+        margin-bottom: 10px;;
+    }
+}
