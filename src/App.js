@@ -1,22 +1,22 @@
-import './App.css';
+// import './App.css';
 import React from 'react';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
 // Components
-import Header from './components/header';
+// import Header from './components/header';
 
 // Pages
 import Home from './pages/home';
-import Login from './pages/login';
+import RegistrationPage from './pages/RegistrationPage';
 import Fixture from './pages/fixturehome'
 
 function App () {
   return (
     <Router>
-      <Header />
+      {/* <Header /> */}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<RegistrationPage />} />
         <Route path="/fixture" element={<Fixture />} />
       </Routes>
     </Router>
