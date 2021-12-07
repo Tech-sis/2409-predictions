@@ -20,6 +20,7 @@ const contentList = {
   Login: <Login />,
 }
 
+
 const RegistrationPage = () => {
   const [activeTabKey1, setActiveTabKey1] = useState('Signup')
 
@@ -30,14 +31,17 @@ const RegistrationPage = () => {
     <div className={styles.login}>
       <Card
         className={styles.antcard}
-        // style={{ width: '100%' }}
+        headStyle={{
+          display: 'flex',
+          justifyContent: 'center',
+        }}
         tabList={tabList}
+        tabBarStyle={{color: 'red',}}
         activeTabKey={activeTabKey1}
         onTabChange={(key) => {
           onTab1Change(key)
         }}
         hoverable
-
       >
         {contentList[activeTabKey1]}
       </Card>
@@ -46,18 +50,3 @@ const RegistrationPage = () => {
 }
 
 export default RegistrationPage
-
-// <div className={styles.container}>
-// {/* <h3 className={styles.h1}>Please Sign In</h3>
-// <form className={styles.form}>
-//   <input className={styles.input} type="text" placeholder="Username" />
-//   <input
-//     className={styles.input}
-//     type="password"
-//     placeholder="Password"
-//   />
-//   <button className={styles.btn} type="submit">
-//     Login
-//   </button>
-// </form> */}
-// </div>
