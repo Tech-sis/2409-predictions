@@ -34,7 +34,7 @@ const Login = () => {
      result = await result.json()
      console.log(result)
      localStorage.setItem('token', JSON.stringify(result))
-     navigate('/')
+     navigate('/home')
    }
 
   return (

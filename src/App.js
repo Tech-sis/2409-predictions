@@ -16,8 +16,8 @@ function App () {
     <Router>
       <NavHeader />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<RegistrationPage />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<RegistrationPage />} />
         <Route path="/fixture" element={<Fixture />} />
         <Route path="/sports" element={<Sports />} />
       </Routes>
