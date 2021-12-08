@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Form, Input, Button, Checkbox } from 'antd'
 import { LockOutlined, MailOutlined } from '@ant-design/icons'
 import styles from '../styles/login.module.css'
-import axios from 'axios'
+// import axios from 'axios'
 import { useNavigate } from 'react-router'
 
 const Login = () => {
@@ -12,30 +12,35 @@ const Login = () => {
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
 
-   async function handleSubmit(e) {
-     e.preventDefault()
-     const data = {
-       name,
-       password,
-     }
-     console.log(data)
-     let result = await fetch(
-       'https://predictablebackend.herokuapp.com/api/user/signin/',
-       {
-         method: 'POST',
-         headers: {
-           'Content-Type': 'application/json',
-           Accept: 'application/json',
-           Authorization: 'Bearer my-token',
-         },
-         body: JSON.stringify(data),
-       }
-     )
-     result = await result.json()
-     console.log(result)
-     localStorage.setItem('token', JSON.stringify(result))
-     navigate('/home')
-   }
+  async function handleSubmit(e) {
+    e.preventDefault()
+    const data = {
+      name,
+      password,
+    }
+    console.log(data)
+    let result = await fetch(
+      'https://predictablebackend.herokuapp.com/api/user/signin/',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+          Authorization: 'Bearer my-token',
+        },
+        body: JSON.stringify(data),
+      }
+    )
+    result = await result.json()
+    console.log(result)
+    localStorage.setItem('user', JSON.stringify(result))
+    navigate('/sports')
+  }
+  // useEffect(() => {
+  //   if (!localStorage.getItem('user')) {
+  //     navigate('/')
+  //   }
+  // }, [])
 
   return (
     <div>

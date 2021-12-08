@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Form, Input, Button, Checkbox } from 'antd'
 import { LockOutlined, MailOutlined, UserOutlined } from '@ant-design/icons'
 import styles from '../styles/login.module.css'
@@ -37,9 +37,15 @@ const Signup = () => {
     )
     result = await result.json()
     console.log(result)
-    localStorage.setItem('token', JSON.stringify(result))
-    navigate('/home')
+    localStorage.setItem('user', JSON.stringify(result))
+    navigate('/sports')
   }
+
+  // useEffect(() => {
+  //   if (!localStorage.getItem('user')) {
+  //     navigate('/')
+  //   }
+  // }, [])
 
   return (
     <div>
