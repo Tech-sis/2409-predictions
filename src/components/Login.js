@@ -1,12 +1,42 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Form, Input, Button, Checkbox } from 'antd'
 import { LockOutlined, MailOutlined } from '@ant-design/icons'
 import styles from '../styles/login.module.css'
+import axios from 'axios'
+import { useNavigate } from 'react-router'
 
 const Login = () => {
-  const onFinish = (values) => {
-    console.log('Received values of form: ', values)
-  }
+  const [name, setName] = useState('')
+  const [password, setPassword] = useState('')
+  const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
+  const navigate = useNavigate()
+
+   async function handleSubmit(e) {
+     e.preventDefault()
+     const data = {
+       name,
+       password,
+     }
+     console.log(data)
+     let result = await fetch(
+       'https://predictablebackend.herokuapp.com/api/user/signin/',
+       {
+         method: 'POST',
+         headers: {
+           'Content-Type': 'application/json',
+           Accept: 'application/json',
+           Authorization: 'Bearer my-token',
+         },
+         body: JSON.stringify(data),
+       }
+     )
+     result = await result.json()
+     console.log(result)
+     localStorage.setItem('token', JSON.stringify(result))
+     navigate('/')
+   }
+
   return (
     <div>
       <Form
@@ -15,7 +45,7 @@ const Login = () => {
         initialValues={{
           remember: true,
         }}
-        onFinish={onFinish}
+        // onFinish={onFinish}
       >
         <Form.Item
           name="email"
@@ -29,6 +59,8 @@ const Login = () => {
           <Input
             prefix={<MailOutlined className="site-form-item-icon" />}
             placeholder="Email"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
         </Form.Item>
         <Form.Item
@@ -44,6 +76,8 @@ const Login = () => {
             prefix={<LockOutlined className="site-form-item-icon" />}
             type="password"
             placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Item>
         <Form.Item>
@@ -67,10 +101,13 @@ const Login = () => {
               borderColor: '#410369',
               width: '-webkit-fill-available',
             }}
+            onClick={handleSubmit}
+            loading={loading}
           >
             Log in
           </Button>
         </Form.Item>
+        <div className={styles.login__error}>{error}</div>
       </Form>
     </div>
   )

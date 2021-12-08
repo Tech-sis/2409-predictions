@@ -1,13 +1,46 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Form, Input, Button, Checkbox } from 'antd'
 import { LockOutlined, MailOutlined, UserOutlined } from '@ant-design/icons'
 import styles from '../styles/login.module.css'
 import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router'
 
 const Signup = () => {
-  const onFinish = (values) => {
-    console.log('Received values of form: ', values)
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const navigate = useNavigate()
+  // const history = useHistory()
+  // const onFinish = (values) => {
+  //   console.log('Received values of form: ', values)
+  // }
+
+  async function handleSubmit(e) {
+    e.preventDefault()
+    const data = {
+      name,
+      email,
+      password,
+    }
+    console.log(data)
+    let result = await fetch(
+      'https://predictablebackend.herokuapp.com/api/user/signup/',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+          Authorization: 'Bearer my-token',
+        },
+        body: JSON.stringify(data),
+      }
+    )
+    result = await result.json()
+    console.log(result)
+    localStorage.setItem('token', JSON.stringify(result))
+    navigate('/')
   }
+
   return (
     <div>
       <Form
@@ -16,7 +49,7 @@ const Signup = () => {
         initialValues={{
           remember: true,
         }}
-        onFinish={onFinish}
+        // onFinish={onFinish}
       >
         <Form.Item
           name="name"
@@ -30,6 +63,8 @@ const Signup = () => {
           <Input
             prefix={<UserOutlined className="site-form-item-icon" />}
             placeholder="Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
         </Form.Item>
         <Form.Item
@@ -44,6 +79,8 @@ const Signup = () => {
           <Input
             prefix={<MailOutlined className="site-form-item-icon" />}
             placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </Form.Item>
         <Form.Item
@@ -59,6 +96,8 @@ const Signup = () => {
             prefix={<LockOutlined className="site-form-item-icon" />}
             type="password"
             placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Item>
         <Form.Item>
@@ -81,8 +120,9 @@ const Signup = () => {
             style={{
               background: '#410369',
               borderColor: '#410369',
-              width: '-webkit-fill-available'
+              width: '-webkit-fill-available',
             }}
+            onClick={handleSubmit}
           >
             Sign Up
           </Button>

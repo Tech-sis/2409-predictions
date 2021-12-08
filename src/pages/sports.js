@@ -31,13 +31,14 @@ const gridStyle = {
   border: '5px solid #fff',
   borderRadius: '10px',
   margin: '5px',
+//   padding: '5px',
 }
 
 const Sports = () => {
   return (
     <div className={styles.container}>
       <Card
-        style={{ backgroundColor: 'black', margin: '50px 84px', padding: '25px' }}
+        style={{ backgroundColor: 'black', margin: '70px 132px', padding: '25px', width: '80%' }}
         bodyStyle={{ margin: '20px 30px' }}
         size="small"
      

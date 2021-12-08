@@ -36,7 +36,7 @@ const RegistrationPage = () => {
           justifyContent: 'center',
         }}
         tabList={tabList}
-        tabBarStyle={{color: 'red',}}
+        // tabBarStyle={{color: 'red',}}
         activeTabKey={activeTabKey1}
         onTabChange={(key) => {
           onTab1Change(key)
