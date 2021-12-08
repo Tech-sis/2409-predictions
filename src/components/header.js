@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from '../styles/header.module.css'
 import url from '../assets/Predictables.svg'
+import { useNavigate } from 'react-router-dom'
 // import { Layout, Menu, Breadcrumb } from 'antd'
 // import {
 //   UserOutlined,
@@ -13,6 +14,12 @@ import url from '../assets/Predictables.svg'
 // const { Header, Content, Sider } = Layout
 
 const NavHeader = () => {
+  const navigate = useNavigate()
+  const handleClick = (e) => {
+    localStorage.clear('user')
+    navigate('/')
+  }
+
   return (
     <nav className={styles.nav}>
       <ul className={styles.ul}>
@@ -46,6 +53,11 @@ const NavHeader = () => {
             </li>
           </>
         )}
+        {localStorage.getItem('user') ? (
+          <li className={styles.list} onClick={handleClick}>
+            Logout
+          </li>
+        ) : null}
       </ul>
     </nav>
   )

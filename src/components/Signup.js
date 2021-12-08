@@ -10,10 +10,6 @@ const Signup = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const navigate = useNavigate()
-  // const history = useHistory()
-  // const onFinish = (values) => {
-  //   console.log('Received values of form: ', values)
-  // }
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -40,12 +36,6 @@ const Signup = () => {
     localStorage.setItem('user', JSON.stringify(result))
     navigate('/sports')
   }
-
-  // useEffect(() => {
-  //   if (!localStorage.getItem('user')) {
-  //     navigate('/')
-  //   }
-  // }, [])
 
   return (
     <div>
