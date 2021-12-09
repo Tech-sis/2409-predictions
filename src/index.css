@@ -1,1 +1,18 @@
 @import '~antd/dist/antd.css';
+
+.ant-anchor-link-title {
+    color: white;
+    white-space: unset;
+    text-overflow: unset;
+}
+.ant-anchor-link {
+        padding: 3px 0px;
+}
+
+
+@media screen and (min-width: 1270px) {
+    .ant-anchor-link {
+        font-size: 14px;
+    }
+    
+}

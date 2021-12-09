@@ -1,6 +1,7 @@
 import React from 'react'
-import { Button, Card } from 'antd'
-import { Link } from 'react-router-dom'
+import { Card } from 'antd'
+// import Countries from './countries'
+import { Anchor } from 'antd'
 import styles from '../styles/sports.module.css'
 import soccer from '../assets/soccer.svg'
 import basketball from '../assets/basketball.svg'
@@ -24,6 +25,7 @@ import aussie from '../assets/aussie.svg'
 import olympic from '../assets/olympic.svg'
 import NavHeader from '../components/header'
 
+const { Link } = Anchor
 const gridStyle = {
   width: '19%',
   textAlign: 'center',
@@ -51,206 +53,172 @@ const Sports = () => {
           size="small"
           className={styles.card}
         >
-          <Card.Grid style={gridStyle} className={styles.cardGrid}>
-            <Link to="">
+          <Anchor affix={false} showInkInFixed={true}>
+            <Card.Grid style={gridStyle} className={styles.cardGrid}>
               <img
                 src={soccer}
                 alt="soccer"
                 style={{ display: 'block', margin: '5px auto' }}
               />
-              Soccer
-            </Link>
-          </Card.Grid>
-          <Card.Grid style={gridStyle} className={styles.cardGrid}>
-            <Link to="/">
+              <Link href="/countries" title="Soccer" />
+            </Card.Grid>
+            <Card.Grid style={gridStyle} className={styles.cardGrid}>
               <img
                 src={basketball}
                 alt="basketball"
                 style={{ display: 'block', margin: '5px auto' }}
               />
-              Basketball
-            </Link>
-          </Card.Grid>
-          <Card.Grid style={gridStyle} className={styles.cardGrid}>
-            <Link to="/">
+              <Link href="/" title="Basketball" />
+            </Card.Grid>
+            <Card.Grid style={gridStyle} className={styles.cardGrid}>
               <img
                 src={americanFootball}
                 alt="american football"
                 style={{ display: 'block', margin: '5px auto' }}
               />
-              American Football
-            </Link>
-          </Card.Grid>
-          <Card.Grid style={gridStyle} className={styles.cardGrid}>
-            <Link to="/">
+              <Link href="/" title="American footbal" />
+            </Card.Grid>
+            <Card.Grid style={gridStyle} className={styles.cardGrid}>
               <img
                 src={volley}
                 alt="volley"
                 style={{ display: 'block', margin: '5px auto' }}
               />
-              Volley ball
-            </Link>
-          </Card.Grid>
-          <Card.Grid style={gridStyle} className={styles.cardGrid}>
-            <Link to="/">
+              <Link href="/" title="Volley ball" />
+            </Card.Grid>
+            <Card.Grid style={gridStyle} className={styles.cardGrid}>
               <img
                 src={tennis}
                 alt="tennis"
                 style={{ display: 'block', margin: '5px auto' }}
               />
-              Tennis
-            </Link>
-          </Card.Grid>
-          <Card.Grid style={gridStyle} className={styles.cardGrid}>
-            <Link to="/">
+              <Link href="/" title="Tennis" />
+            </Card.Grid>
+            <Card.Grid style={gridStyle} className={styles.cardGrid}>
               <img
                 src={boxing}
                 alt="boxing"
                 style={{ display: 'block', margin: '5px auto' }}
               />
-              Boxing
-            </Link>
-          </Card.Grid>
-          <Card.Grid style={gridStyle} className={styles.cardGrid}>
-            <Link to="/">
+              <Link href="/" title="Boxing" />
+            </Card.Grid>
+            <Card.Grid style={gridStyle} className={styles.cardGrid}>
               <img
                 src={bowling}
                 alt="bowling"
                 style={{ display: 'block', margin: '5px auto' }}
               />
-              Bowling
-            </Link>
-          </Card.Grid>
-          <Card.Grid style={gridStyle} className={styles.cardGrid}>
-            <Link to="">
+              <Link href="/" title="Bowling" />
+            </Card.Grid>
+            <Card.Grid style={gridStyle} className={styles.cardGrid}>
               <img
                 src={icehockey}
                 alt="icehockey"
                 style={{ display: 'block', margin: '5px auto' }}
               />
-              Ice Hockey
-            </Link>
-          </Card.Grid>
-          <Card.Grid style={gridStyle} className={styles.cardGrid}>
-            <Link to="/">
+              <Link href="/" title="Ice Hockey" />
+            </Card.Grid>
+            <Card.Grid style={gridStyle} className={styles.cardGrid}>
               <img
                 src={badminton}
                 alt="badminton"
                 style={{ display: 'block', margin: '5px auto' }}
               />
-              Badminton
-            </Link>
-          </Card.Grid>
-          <Card.Grid style={gridStyle} className={styles.cardGrid}>
-            <Link to="/">
+              <Link href="/" title="Badminton" />
+            </Card.Grid>
+            <Card.Grid style={gridStyle} className={styles.cardGrid}>
               <img
                 src={snooker}
                 alt="snooker"
                 style={{ display: 'block', margin: '5px auto' }}
               />
-              Snooker
-            </Link>
-          </Card.Grid>
-          <Card.Grid style={gridStyle} className={styles.cardGrid}>
-            <Link to="/">
+              <Link href="/" title="Snooker" />
+            </Card.Grid>
+            <Card.Grid style={gridStyle} className={styles.cardGrid}>
               <img
                 src={cricket}
                 alt="cricket"
                 style={{ display: 'block', margin: '5px auto' }}
               />
-              Cricket
-            </Link>
-          </Card.Grid>
-          <Card.Grid style={gridStyle} className={styles.cardGrid}>
-            <Link to="/">
+              <Link href="/" title="Cricket" />
+            </Card.Grid>
+            <Card.Grid style={gridStyle} className={styles.cardGrid}>
               <img
                 src={golf}
                 alt="golf"
                 style={{ display: 'block', margin: '5px auto' }}
               />
-              Golf
-            </Link>
-          </Card.Grid>
-          <Card.Grid style={gridStyle} className={styles.cardGrid}>
-            <Link to="/">
+              <Link href="/" title="Golf" />
+            </Card.Grid>
+            <Card.Grid style={gridStyle} className={styles.cardGrid}>
               <img
                 src={baseball}
                 alt="baseball"
                 style={{ display: 'block', margin: '5px auto' }}
               />
-              Baseball
-            </Link>
-          </Card.Grid>
-          <Card.Grid style={gridStyle} className={styles.cardGrid}>
-            <Link to="/">
+              <Link href="/" title="Baseball" />
+            </Card.Grid>
+            <Card.Grid style={gridStyle} className={styles.cardGrid}>
               <img
                 src={aussie}
                 alt="aussie"
                 style={{ display: 'block', margin: '5px auto' }}
               />
-              Aussie Rules
-            </Link>
-          </Card.Grid>
-          <Card.Grid style={gridStyle} className={styles.cardGrid}>
-            <Link to="">
+              <Link href="/" title="Aussie Rules" />
+            </Card.Grid>
+            <Card.Grid style={gridStyle} className={styles.cardGrid}>
               <img
                 src={rugby}
                 alt="rugby"
                 style={{ display: 'block', margin: '5px auto' }}
               />
-              Rugby
-            </Link>
-          </Card.Grid>
-          <Card.Grid style={gridStyle} className={styles.cardGrid}>
-            <Link to="/">
+              <Link href="/" title="Rugby" />
+            </Card.Grid>
+            <Card.Grid style={gridStyle} className={styles.cardGrid}>
               <img
                 src={darts}
                 alt="darts"
                 style={{ display: 'block', margin: '5px auto' }}
               />
-              Darts
-            </Link>
-          </Card.Grid>
-          <Card.Grid style={gridStyle} className={styles.cardGrid}>
-            <Link to="/">
+              <Link href="/" title="Darts" />
+            </Card.Grid>
+            <Card.Grid style={gridStyle} className={styles.cardGrid}>
               <img
                 src={chess}
                 alt="chess"
                 style={{ display: 'block', margin: '5px auto' }}
               />
-              Chess
-            </Link>
-          </Card.Grid>
-          <Card.Grid style={gridStyle} className={styles.cardGrid}>
-            <Link to="/">
+              <Link href="/" title="Chess" />
+            </Card.Grid>
+            <Card.Grid style={gridStyle} className={styles.cardGrid}>
               <img
                 src={swimming}
                 alt="swimming"
                 style={{ display: 'block', margin: '5px auto' }}
               />
-              Swimming
-            </Link>
-          </Card.Grid>
-          <Card.Grid style={gridStyle} className={styles.cardGrid}>
-            <Link to="/">
+              <Link href="/" title="Swimming" />
+            </Card.Grid>
+            <Card.Grid style={gridStyle} className={styles.cardGrid}>
               <img
                 src={olympic}
                 alt="olympic"
                 style={{ display: 'block', margin: '5px auto' }}
               />
-              Olympic
-            </Link>
-          </Card.Grid>
-          <Card.Grid style={gridStyle} className={styles.cardGrid}>
-            <Link to="/">
+              <Link href="/" title="Olympic" />
+            </Card.Grid>
+            <Card.Grid style={gridStyle} className={styles.cardGrid}>
               <img
                 src={cycling}
                 alt="cycling"
-                style={{ display: 'block', margin: '5px auto', color: 'white' }}
+                style={{
+                  display: 'block',
+                  margin: '5px auto',
+                  color: 'white',
+                }}
               />
-              Cycling
-            </Link>
-          </Card.Grid>
+              <Link href="/" title="Cycling" />
+            </Card.Grid>
+          </Anchor>
         </Card>
       </div>
     </>

@@ -9,8 +9,10 @@
      overflow-y: scroll;
 }
 
-a{
-    color: white;
+
+.ant-anchor-link-title:only-child {
+    margin-bottom: 0;
+    color: white !important;
 }
 
 /* .card{
@@ -35,12 +37,12 @@ a{
     .card{
       width: 65% !important;
       margin: 30px auto !important;
-      height: 83%;
+      /* height: 83%; */
     }
     .cardGrid{
         width: 18% !important;
        margin: 7px 5px !important;
        height: 105px !important;
-       padding: 10px !important;
+       padding: 20px !important;
     }
 }
