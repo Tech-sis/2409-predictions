@@ -49,8 +49,9 @@ const Sports = () => {
           }}
           bodyStyle={{ margin: '20px 30px' }}
           size="small"
+          className={styles.card}
         >
-          <Card.Grid style={gridStyle}>
+          <Card.Grid style={gridStyle} className={styles.cardGrid}>
             <Link to="">
               <img
                 src={soccer}
@@ -60,7 +61,7 @@ const Sports = () => {
               Soccer
             </Link>
           </Card.Grid>
-          <Card.Grid style={gridStyle}>
+          <Card.Grid style={gridStyle} className={styles.cardGrid}>
             <Link to="/">
               <img
                 src={basketball}
@@ -70,7 +71,7 @@ const Sports = () => {
               Basketball
             </Link>
           </Card.Grid>
-          <Card.Grid style={gridStyle}>
+          <Card.Grid style={gridStyle} className={styles.cardGrid}>
             <Link to="/">
               <img
                 src={americanFootball}
@@ -80,7 +81,7 @@ const Sports = () => {
               American Football
             </Link>
           </Card.Grid>
-          <Card.Grid style={gridStyle}>
+          <Card.Grid style={gridStyle} className={styles.cardGrid}>
             <Link to="/">
               <img
                 src={volley}
@@ -90,7 +91,7 @@ const Sports = () => {
               Volley ball
             </Link>
           </Card.Grid>
-          <Card.Grid style={gridStyle}>
+          <Card.Grid style={gridStyle} className={styles.cardGrid}>
             <Link to="/">
               <img
                 src={tennis}
@@ -100,7 +101,7 @@ const Sports = () => {
               Tennis
             </Link>
           </Card.Grid>
-          <Card.Grid style={gridStyle}>
+          <Card.Grid style={gridStyle} className={styles.cardGrid}>
             <Link to="/">
               <img
                 src={boxing}
@@ -110,7 +111,7 @@ const Sports = () => {
               Boxing
             </Link>
           </Card.Grid>
-          <Card.Grid style={gridStyle}>
+          <Card.Grid style={gridStyle} className={styles.cardGrid}>
             <Link to="/">
               <img
                 src={bowling}
@@ -120,7 +121,7 @@ const Sports = () => {
               Bowling
             </Link>
           </Card.Grid>
-          <Card.Grid style={gridStyle}>
+          <Card.Grid style={gridStyle} className={styles.cardGrid}>
             <Link to="">
               <img
                 src={icehockey}
@@ -130,7 +131,7 @@ const Sports = () => {
               Ice Hockey
             </Link>
           </Card.Grid>
-          <Card.Grid style={gridStyle}>
+          <Card.Grid style={gridStyle} className={styles.cardGrid}>
             <Link to="/">
               <img
                 src={badminton}
@@ -140,7 +141,7 @@ const Sports = () => {
               Badminton
             </Link>
           </Card.Grid>
-          <Card.Grid style={gridStyle}>
+          <Card.Grid style={gridStyle} className={styles.cardGrid}>
             <Link to="/">
               <img
                 src={snooker}
@@ -150,7 +151,7 @@ const Sports = () => {
               Snooker
             </Link>
           </Card.Grid>
-          <Card.Grid style={gridStyle}>
+          <Card.Grid style={gridStyle} className={styles.cardGrid}>
             <Link to="/">
               <img
                 src={cricket}
@@ -160,7 +161,7 @@ const Sports = () => {
               Cricket
             </Link>
           </Card.Grid>
-          <Card.Grid style={gridStyle}>
+          <Card.Grid style={gridStyle} className={styles.cardGrid}>
             <Link to="/">
               <img
                 src={golf}
@@ -170,7 +171,7 @@ const Sports = () => {
               Golf
             </Link>
           </Card.Grid>
-          <Card.Grid style={gridStyle}>
+          <Card.Grid style={gridStyle} className={styles.cardGrid}>
             <Link to="/">
               <img
                 src={baseball}
@@ -180,7 +181,7 @@ const Sports = () => {
               Baseball
             </Link>
           </Card.Grid>
-          <Card.Grid style={gridStyle}>
+          <Card.Grid style={gridStyle} className={styles.cardGrid}>
             <Link to="/">
               <img
                 src={aussie}
@@ -190,7 +191,7 @@ const Sports = () => {
               Aussie Rules
             </Link>
           </Card.Grid>
-          <Card.Grid style={gridStyle}>
+          <Card.Grid style={gridStyle} className={styles.cardGrid}>
             <Link to="">
               <img
                 src={rugby}
@@ -200,7 +201,7 @@ const Sports = () => {
               Rugby
             </Link>
           </Card.Grid>
-          <Card.Grid style={gridStyle}>
+          <Card.Grid style={gridStyle} className={styles.cardGrid}>
             <Link to="/">
               <img
                 src={darts}
@@ -210,7 +211,7 @@ const Sports = () => {
               Darts
             </Link>
           </Card.Grid>
-          <Card.Grid style={gridStyle}>
+          <Card.Grid style={gridStyle} className={styles.cardGrid}>
             <Link to="/">
               <img
                 src={chess}
@@ -220,7 +221,7 @@ const Sports = () => {
               Chess
             </Link>
           </Card.Grid>
-          <Card.Grid style={gridStyle}>
+          <Card.Grid style={gridStyle} className={styles.cardGrid}>
             <Link to="/">
               <img
                 src={swimming}
@@ -230,7 +231,7 @@ const Sports = () => {
               Swimming
             </Link>
           </Card.Grid>
-          <Card.Grid style={gridStyle}>
+          <Card.Grid style={gridStyle} className={styles.cardGrid}>
             <Link to="/">
               <img
                 src={olympic}
@@ -240,7 +241,7 @@ const Sports = () => {
               Olympic
             </Link>
           </Card.Grid>
-          <Card.Grid style={gridStyle}>
+          <Card.Grid style={gridStyle} className={styles.cardGrid}>
             <Link to="/">
               <img
                 src={cycling}

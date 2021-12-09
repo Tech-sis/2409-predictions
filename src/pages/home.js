@@ -5,13 +5,13 @@ import NavHeader from '../components/header'
 
 const Home = () => {
     return (
-        <>
+        <div className={styles.background}>
         <NavHeader />
         <div className={styles.fix}>
             {/* <h1>Home</h1> */}
             <Fixtures />
         </div>
-        </>
+        </div>
     )
 }
 

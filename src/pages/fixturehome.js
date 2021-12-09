@@ -7,14 +7,14 @@ import styles from '../styles/home.module.css'
 
 const Fixturehome = () => {
   return (
-    <>
+    <div className={styles.background}>
       <NavHeader />
       <div className={styles.fix}>
         <h1 className={styles.h1}>Recent Games</h1>
         <Home />
         <Head2Head />
       </div>
-    </>
+    </div>
   )
 }
 
