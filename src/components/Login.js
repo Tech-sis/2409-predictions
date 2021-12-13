@@ -102,8 +102,8 @@ const Login = () => {
             htmlType="submit"
             className={styles.loginformbutton}
             style={{
-              background: '#410369',
-              borderColor: '#410369',
+              background: '#001E8B',
+              borderColor: '#001E8B',
               width: '-webkit-fill-available',
             }}
             onClick={handleSubmit}

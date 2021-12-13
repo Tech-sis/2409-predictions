@@ -8,6 +8,13 @@
 .ant-anchor-link {
         padding: 3px 0px;
 }
+.ant-tabs-ink-bar {
+    background: #001E8B;
+}
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: #2B2B2B;
+    font-size: 24px;
+}
 
 
 @media screen and (min-width: 1270px) {
@@ -15,4 +22,23 @@
         font-size: 14px;
     }
     
+}
+
+@media screen and (min-width: 1370px) {
+    .ant-input-affix-wrapper>input.ant-input {
+        font-size: 20px;
+    }
+    .ant-form label {
+        font-size: 10px;
+    }
+    .ant-btn-lg {
+        height: 50px;
+        border-radius: 10px;
+    }
+    .ant-btn-lg {
+        font-size: 20px;
+    }
+    .ant-input-affix-wrapper {
+        height: 50px;
+    }
 }

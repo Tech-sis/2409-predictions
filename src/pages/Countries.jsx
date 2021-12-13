@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import styles from '../styles/countries.module.css'
-import { List, Input,  message, Avatar, Skeleton, Divider } from 'antd'
+import { List, Input, Avatar, Skeleton, } from 'antd'
 import { Button, Tooltip } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
 import InfiniteScroll from 'react-infinite-scroll-component'
@@ -43,14 +43,12 @@ const Countries = () => {
           next={loadMoreData}
           hasMore={data.length < 50}
           loader={<Skeleton avatar paragraph={{ rows: 1 }} active />}
-          endMessage={<Divider plain>It is all, nothing more 🤐</Divider>}
           scrollableTarget="scrollableDiv"
         >
           <List
           header={
             <div>
-              <Search enterButton={true} placeholder="input search text" allowClear onSearch={onSearch} style={{ width: 200 }} />
-    
+              <Search placeholder="input search loading default" loading onSearch={onSearch} />
             </div>
           }
             dataSource={data}

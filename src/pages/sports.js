@@ -34,7 +34,6 @@ const gridStyle = {
   border: '5px solid #fff',
   borderRadius: '10px',
   margin: '5px',
-  //   padding: '5px',
 }
 
 const Sports = () => {
@@ -49,16 +48,17 @@ const Sports = () => {
             padding: '25px',
             width: '80%',
           }}
-          bodyStyle={{ margin: '20px 30px' }}
+          bodyStyle={{ margin: '20px 30px 0' }}
           size="small"
           className={styles.card}
         >
-          <Anchor affix={false} showInkInFixed={true}>
+          <Anchor affix={false}>
             <Card.Grid style={gridStyle} className={styles.cardGrid}>
               <img
                 src={soccer}
                 alt="soccer"
                 style={{ display: 'block', margin: '5px auto' }}
+                className={styles.cardImg}
               />
               <Link href="/countries" title="Soccer" />
             </Card.Grid>
@@ -67,6 +67,7 @@ const Sports = () => {
                 src={basketball}
                 alt="basketball"
                 style={{ display: 'block', margin: '5px auto' }}
+                className={styles.cardImg}
               />
               <Link href="/" title="Basketball" />
             </Card.Grid>
@@ -75,14 +76,16 @@ const Sports = () => {
                 src={americanFootball}
                 alt="american football"
                 style={{ display: 'block', margin: '5px auto' }}
+                className={styles.cardImg}
               />
-              <Link href="/" title="American footbal" />
+              <Link href="/" title="American football" />
             </Card.Grid>
             <Card.Grid style={gridStyle} className={styles.cardGrid}>
               <img
                 src={volley}
                 alt="volley"
                 style={{ display: 'block', margin: '5px auto' }}
+                className={styles.cardImg}
               />
               <Link href="/" title="Volley ball" />
             </Card.Grid>
@@ -91,6 +94,7 @@ const Sports = () => {
                 src={tennis}
                 alt="tennis"
                 style={{ display: 'block', margin: '5px auto' }}
+                className={styles.cardImg}
               />
               <Link href="/" title="Tennis" />
             </Card.Grid>
@@ -99,6 +103,7 @@ const Sports = () => {
                 src={boxing}
                 alt="boxing"
                 style={{ display: 'block', margin: '5px auto' }}
+                className={styles.cardImg}
               />
               <Link href="/" title="Boxing" />
             </Card.Grid>
@@ -107,6 +112,7 @@ const Sports = () => {
                 src={bowling}
                 alt="bowling"
                 style={{ display: 'block', margin: '5px auto' }}
+                className={styles.cardImg}
               />
               <Link href="/" title="Bowling" />
             </Card.Grid>
@@ -115,6 +121,7 @@ const Sports = () => {
                 src={icehockey}
                 alt="icehockey"
                 style={{ display: 'block', margin: '5px auto' }}
+                className={styles.cardImg}
               />
               <Link href="/" title="Ice Hockey" />
             </Card.Grid>
@@ -123,6 +130,7 @@ const Sports = () => {
                 src={badminton}
                 alt="badminton"
                 style={{ display: 'block', margin: '5px auto' }}
+                className={styles.cardImg}
               />
               <Link href="/" title="Badminton" />
             </Card.Grid>
@@ -131,6 +139,7 @@ const Sports = () => {
                 src={snooker}
                 alt="snooker"
                 style={{ display: 'block', margin: '5px auto' }}
+                className={styles.cardImg}
               />
               <Link href="/" title="Snooker" />
             </Card.Grid>
@@ -139,6 +148,7 @@ const Sports = () => {
                 src={cricket}
                 alt="cricket"
                 style={{ display: 'block', margin: '5px auto' }}
+                className={styles.cardImg}
               />
               <Link href="/" title="Cricket" />
             </Card.Grid>
@@ -147,6 +157,7 @@ const Sports = () => {
                 src={golf}
                 alt="golf"
                 style={{ display: 'block', margin: '5px auto' }}
+                className={styles.cardImg}
               />
               <Link href="/" title="Golf" />
             </Card.Grid>
@@ -155,6 +166,7 @@ const Sports = () => {
                 src={baseball}
                 alt="baseball"
                 style={{ display: 'block', margin: '5px auto' }}
+                className={styles.cardImg}
               />
               <Link href="/" title="Baseball" />
             </Card.Grid>
@@ -163,6 +175,7 @@ const Sports = () => {
                 src={aussie}
                 alt="aussie"
                 style={{ display: 'block', margin: '5px auto' }}
+                className={styles.cardImg}
               />
               <Link href="/" title="Aussie Rules" />
             </Card.Grid>
@@ -171,6 +184,7 @@ const Sports = () => {
                 src={rugby}
                 alt="rugby"
                 style={{ display: 'block', margin: '5px auto' }}
+                className={styles.cardImg}
               />
               <Link href="/" title="Rugby" />
             </Card.Grid>
@@ -179,6 +193,7 @@ const Sports = () => {
                 src={darts}
                 alt="darts"
                 style={{ display: 'block', margin: '5px auto' }}
+                className={styles.cardImg}
               />
               <Link href="/" title="Darts" />
             </Card.Grid>
@@ -187,6 +202,7 @@ const Sports = () => {
                 src={chess}
                 alt="chess"
                 style={{ display: 'block', margin: '5px auto' }}
+                className={styles.cardImg}
               />
               <Link href="/" title="Chess" />
             </Card.Grid>
@@ -195,6 +211,7 @@ const Sports = () => {
                 src={swimming}
                 alt="swimming"
                 style={{ display: 'block', margin: '5px auto' }}
+                className={styles.cardImg}
               />
               <Link href="/" title="Swimming" />
             </Card.Grid>
@@ -203,6 +220,7 @@ const Sports = () => {
                 src={olympic}
                 alt="olympic"
                 style={{ display: 'block', margin: '5px auto' }}
+                className={styles.cardImg}
               />
               <Link href="/" title="Olympic" />
             </Card.Grid>
@@ -213,8 +231,9 @@ const Sports = () => {
                 style={{
                   display: 'block',
                   margin: '5px auto',
-                  color: 'white',
+                  // color: 'white',
                 }}
+                className={styles.cardImg}
               />
               <Link href="/" title="Cycling" />
             </Card.Grid>
