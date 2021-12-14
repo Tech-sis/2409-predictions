@@ -8,7 +8,7 @@ import InfiniteScroll from 'react-infinite-scroll-component'
 const Countries = () => {
   const { Search } = Input;
   const onSearch = value => console.log(value);
-
+  const [searchTerm, setSearchTerm] = useState('')
   const [loading, setLoading] = useState(false)
   const [data, setData] = useState([])
 
@@ -34,6 +34,10 @@ const Countries = () => {
     loadMoreData()
   }, [])
 
+  const handleChange = (e) => {
+    setSearchTerm(e.target.value)
+  }
+
   return (
     <div className={styles.container}>
       <div id="scrollableDiv" className={styles.scrollableDiv}>
@@ -48,7 +52,7 @@ const Countries = () => {
           <List
           header={
             <div>
-              <Search placeholder="input search loading default" loading onSearch={onSearch} />
+               <Search prefix={<SearchOutlined />} placeholder="Country" enterButton="" onChange={handleChange} />
             </div>
           }
             dataSource={data}
@@ -56,9 +60,8 @@ const Countries = () => {
             renderItem={(item) => (
               <List.Item key={item.id}>
                 <List.Item.Meta
-                  avatar={<Avatar src={item.picture.large} />}
-                  title={<a href="https://ant.design">{item.name.last}</a>}
-                  // description={item.email}
+                  avatar={<Avatar src={item.picture.large} shape="square" size="large" />}
+                  title={<a href="/country">{item.name.last}</a>}
                 />
               </List.Item>
             )}

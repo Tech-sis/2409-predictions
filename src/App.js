@@ -11,6 +11,7 @@ import RegistrationPage from './pages/RegistrationPage'
 import Fixture from './pages/fixturehome'
 import Sports from './pages/sports'
 import Countries from "./pages/Countries";
+import MajorCountry from './pages/MajorCountry'
 function App() {
   return (
     <Router>
@@ -21,6 +22,7 @@ function App() {
         <Route path="/fixture" element={<Fixture />} />
         <Route path="/sports" element={<Sports />} />
         <Route path="/countries" element={<Countries />} />
+        <Route path="/country" element={<MajorCountry />} />
       </Routes>
     </Router>
   )

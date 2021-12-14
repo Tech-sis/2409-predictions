@@ -15,6 +15,21 @@
     color: #2B2B2B;
     font-size: 24px;
 }
+.ant-menu-light .ant-menu-item:hover,
+.ant-menu-light .ant-menu-item-active,
+.ant-menu-light .ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open,
+.ant-menu-light .ant-menu-submenu-active,
+.ant-menu-light .ant-menu-submenu-title:hover {
+    color: #94D4DD;
+}
+.ant-menu-submenu-selected {
+    color: #94D4DD;
+}
+.ant-input-group>.ant-input-affix-wrapper:not(:last-child) .ant-input {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    text-indent: 10px;
+}
 
 
 @media screen and (min-width: 1270px) {

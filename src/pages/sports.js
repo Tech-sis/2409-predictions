@@ -43,7 +43,7 @@ const Sports = () => {
       <div className={styles.container}>
         <Card
           style={{
-            backgroundColor: 'black',
+            backgroundColor: '#001E8B',
             margin: '70px 132px',
             padding: '25px',
             width: '80%',
