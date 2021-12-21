@@ -2,23 +2,26 @@ import React, { useState, useEffect } from 'react'
 import { Form, Input, Button, Checkbox } from 'antd'
 import { LockOutlined, MailOutlined } from '@ant-design/icons'
 import styles from '../styles/login.module.css'
-// import axios from 'axios'
+import axios from 'axios'
 import { useNavigate } from 'react-router'
+// import {useHistory} from 'react-router-dom'
 
 const Login = () => {
-  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
 
-  async function handleSubmit(e) {
+  const handleSubmit = async (e) => {
     e.preventDefault()
+    setLoading(true)
     const data = {
-      name,
+      email,
       password,
     }
     console.log(data)
+
     let result = await fetch(
       'https://predictablebackend.herokuapp.com/api/user/signin/',
       {
@@ -36,11 +39,6 @@ const Login = () => {
     localStorage.setItem('user', JSON.stringify(result))
     navigate('/sports')
   }
-  // useEffect(() => {
-  //   if (!localStorage.getItem('user')) {
-  //     navigate('/')
-  //   }
-  // }, [])
 
   return (
     <div>
@@ -64,8 +62,8 @@ const Login = () => {
           <Input
             prefix={<MailOutlined className="site-form-item-icon" />}
             placeholder="Email"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </Form.Item>
         <Form.Item

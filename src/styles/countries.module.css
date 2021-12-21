@@ -7,16 +7,34 @@
   
 }
 .layout{
-     position: fixed;
-     /* top: 62px; */
-     width: 100%;
-     height: 100%;
-    background-image: url('../assets/background.svg') !important;
-      overflow-y: scroll;
+    background-color: #E5E5E5;
+    overflow-y: auto;
+    scroll-behavior: auto;
+    scroll-snap-align: start;
+    scroll-snap-type: y mandatory;
 }
-.site-layout-background {
+    /* scroll-behavior: smooth; */
+
+/* ::-webkit-scrollbar {
+    width: 10px;  
+    background: grey; 
+}
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+::-webkit-scrollbar-button {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #FF0000;
+}
+::-webkit-scrollbar-corner {
+    background: #FF0000;
+}
+.sitelayoutbackground {
     overflow-y: scroll;
-}
+} */
 .siderHead{
     background-color: #061B65 !important;
     color: #939393 !important;
@@ -39,4 +57,22 @@
     padding: 0 40px;
     border: 1px solid rgba(140, 140, 140, 0.35);
     background-color: white;
+}
+.breadlink{
+    color: #94D4DD !important;
+}
+p {
+    font-size: 10px;
+}
+.topleague{
+    background: #002368;
+    border-radius: 5px;
+        margin: 15px;
+        color: white;
+        padding: 15px;
+}
+.carddiv{
+    background: #F1F2F5;
+    border: 1px solid rgba(35, 137, 144, 1);
+    border-radius: 10px;
 }

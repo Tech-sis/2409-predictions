@@ -30,6 +30,18 @@
     border-bottom-right-radius: 0;
     text-indent: 10px;
 }
+.ant-breadcrumb-separator {
+    color: white;
+}
+/* .ant-layout-content {
+    overflow: scroll;
+} */
+.ant-card-contain-grid:not(.ant-card-loading) .ant-card-body {
+    background: #F1F2F5;
+    border: 1px solid #238990;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
 
 
 @media screen and (min-width: 1270px) {
