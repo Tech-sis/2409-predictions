@@ -1,8 +1,8 @@
 import React from 'react'
 // import Away from '../components/awayteam'
-import Home from '../components/hometeam'
-import Head2Head from '../components/head2head'
-import NavHeader from '../components/header'
+import Home from '../components/Hometeam'
+import Head2Head from '../components/Head2head'
+import NavHeader from '../components/Header'
 import styles from '../styles/home.module.css'
 
 const Fixturehome = () => {

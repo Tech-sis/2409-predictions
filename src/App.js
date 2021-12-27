@@ -10,10 +10,10 @@ import {
 // import NavHeader from './components/header'
 
 // Pages
-import Home from './pages/home'
+import Home from './pages/Home'
 import RegistrationPage from './pages/RegistrationPage'
-import Fixture from './pages/fixturehome'
-import Sports from './pages/sports'
+import Fixture from './pages/Fixturehome'
+import Sports from './pages/Sports'
 import Countries from './pages/Countries'
 import MajorCountry from './pages/MajorCountry'
 

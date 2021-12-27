@@ -23,7 +23,7 @@ import volley from '../assets/volley.svg'
 import cycling from '../assets/cycling.svg'
 import aussie from '../assets/aussie.svg'
 import olympic from '../assets/olympic.svg'
-import NavHeader from '../components/header'
+import NavHeader from '../components/Header'
 
 const { Link } = Anchor
 const gridStyle = {

@@ -3,7 +3,7 @@ import styles from '../styles/login.module.css'
 import { Card } from 'antd'
 import Login from '../components/Login'
 import Signup from '../components/Signup'
-import NavHeader from '../components/header'
+import NavHeader from '../components/Header'
 
 const tabList = [
   {

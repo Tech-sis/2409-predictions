@@ -4,6 +4,7 @@ import { LockOutlined, MailOutlined } from '@ant-design/icons'
 import styles from '../styles/login.module.css'
 import axios from 'axios'
 import { useNavigate } from 'react-router'
+import api from '../utils/api'
 // import {useHistory} from 'react-router-dom'
 
 const Login = () => {
@@ -21,22 +22,8 @@ const Login = () => {
       password,
     }
     console.log(data)
-
-    let result = await fetch(
-      'https://predictablebackend.herokuapp.com/api/user/signin/',
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-          Authorization: 'Bearer my-token',
-        },
-        body: JSON.stringify(data),
-      }
-    )
-    result = await result.json()
-    console.log(result)
-    localStorage.setItem('user', JSON.stringify(result))
+    const response = api('user/signin/', 'POST', data)
+    localStorage.setItem('user', JSON.stringify(response.data))
     navigate('/sports')
   }
 
