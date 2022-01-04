@@ -1,15 +1,10 @@
-/* body{
-    background: linear-gradient(116.37deg, #0B1434 5.77%, rgba(44, 179, 255, 0.455208) 53.66%, rgba(11, 23, 35, 0.37) 101.95%);
-} */
 .container{
     position: fixed;
     top: 62px;
     width: 100%;
     height: 100%;
-    background: linear-gradient(116.4deg, #FFFFFF 10.12%, rgba(198, 198, 198, 0) 97.04%, rgba(180, 205, 255, 0.86) 97.04%);
-     /* background-repeat: no-repeat;
-     background-size: cover; */
-     overflow-y: scroll;
+    /* background: linear-gradient(116.4deg, #FFFFFF 10.12%, rgba(198, 198, 198, 0) 97.04%, rgba(180, 205, 255, 0.86) 97.04%); */
+    overflow-y: scroll;
 }
 
 
@@ -21,7 +16,7 @@
 
 @media screen and (max-width: 639px) {
     .card {
-       margin: 70px 40px !important;
+       margin: 35px 40px !important;
        padding: 0 !important;
     }
     .cardGrid{
@@ -39,27 +34,43 @@
 @media screen and (min-width: 640px) {
    .card{
        width: 75% !important;
-       margin: 50px auto !important;
+       margin: 15px auto !important;
+       padding: 0 !important;
    }
    .cardGrid{
-       width: 22% !important;
-       height: 90px !important;
+       width: 17% !important;
+       height: 83px !important;
        padding: 10px !important;
-       font-size: 10px !important;
+       font-size: 7px !important;
        color: white !important;
    }
+}
+
+@media screen and (min-width:940px) {
+    .cardGrid{
+        font-size: 12px !important;
+    }
 }
 
 @media screen and (min-width: 1200px) {
     .card{
       width: 65% !important;
-      margin: 70px auto !important;
+      margin: 25px auto !important;
       /* height: 83%; */
     }
     .cardGrid{
+        width: 16% !important;
+       margin: 5px 3px !important;
+       height: 90px !important;
+       padding: 5px !important;
+    }
+}
+
+@media screen and (min-width:1370px) {
+    .cardGrid {
         width: 18% !important;
-       margin: 7px 5px !important;
-       height: 105px !important;
-       padding: 20px !important;
+        margin: 5px !important;
+        height: 115px !important;
+        padding: 20px !important;
     }
 }
