@@ -70,9 +70,9 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Item>
-        <Form.Item>
-          <Form.Item name="remember" valuePropName="checked" noStyle>
-            <Checkbox>Remember me</Checkbox>
+        <Form.Item >
+          <Form.Item name="remember" noStyle>
+            <Checkbox className={styles.RemPass}>Remember me</Checkbox>
           </Form.Item>
 
           <a className={styles.loginformforgot} href="/">

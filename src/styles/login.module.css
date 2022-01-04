@@ -10,6 +10,7 @@
     margin: 70px 60px !important;
     width: 75% !important;
     border-radius: 10px !important;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     padding: 10px 30px !important;
 }
 .loginformforgot{
@@ -18,6 +19,26 @@
 }
 .ant-tabs-tab:hover {
     color: #410341
+}
+.loginformforgot{
+    position: relative;
+    top: -25px;
+    font-size: 10px;
+    font-family: 'Roboto',
+    sans-serif;
+}
+.RemPass{
+      position: relative;
+      top: -25px;
+      font-family: 'Roboto',
+      sans-serif;
+}
+.agreement{
+    position: relative;
+    top: -20px;
+    font-size: 9px !important;
+    font-family: 'Roboto',
+    sans-serif;
 }
 
 
@@ -59,9 +80,10 @@
         width: 35% !important;
     }
     .loginformforgot {
-        margin-left: 17px;
+        margin-left: 127px;
+        font-size: 10px;
     }
     .antcard {
-        padding: 10px 75px !important;
+        padding: 24px 75px 10px !important;
     }
 }

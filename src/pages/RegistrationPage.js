@@ -21,7 +21,6 @@ const contentList = {
   Login: <Login />,
 }
 
-
 const RegistrationPage = () => {
   const [activeTabKey1, setActiveTabKey1] = useState('Signup')
 
@@ -30,25 +29,30 @@ const RegistrationPage = () => {
   }
   return (
     <>
-    <NavHeader />
-    <div className={styles.login}>
-      <Card
-        className={styles.antcard}
-        headStyle={{
-          display: 'flex',
-          justifyContent: 'center',
-        }}
-        tabList={tabList}
-        // tabBarStyle={{color: 'red',}}
-        activeTabKey={activeTabKey1}
-        onTabChange={(key) => {
-          onTab1Change(key)
-        }}
-        hoverable
-      >
-        {contentList[activeTabKey1]}
-      </Card>
-    </div>
+      <NavHeader />
+      <div className={styles.login}>
+        <Card
+          className={styles.antcard}
+          headStyle={{
+            display: 'flex',
+            justifyContent: 'center',
+          }}
+          tabList={tabList}
+          style={{
+            fontFamily: 'Playfair Display, serif',
+            fontStyle: 'normal',
+            color: '#2b2b2b',
+          }}
+          // tabBarStyle={{color: 'red',}}
+          activeTabKey={activeTabKey1}
+          onTabChange={(key) => {
+            onTab1Change(key)
+          }}
+          hoverable
+        >
+          {contentList[activeTabKey1]}
+        </Card>
+      </div>
     </>
   )
 }

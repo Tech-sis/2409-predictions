@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Form, Input, Button, Checkbox } from 'antd'
 import { LockOutlined, MailOutlined, UserOutlined } from '@ant-design/icons'
 import styles from '../styles/login.module.css'
@@ -87,7 +87,7 @@ const Signup = () => {
         </Form.Item>
         <Form.Item>
           <Form.Item name="agreement" valuePropName="checked" noStyle>
-            <Checkbox>
+            <Checkbox className={styles.agreement}>
               By creating an account, you agree to the {''}
               <Link to="/">Terms of Service</Link> and {''}
               <Link to="/">Conditions</Link> & {''}
@@ -106,6 +106,7 @@ const Signup = () => {
               background: '#001E8B',
               borderColor: '#001E8B',
               width: '-webkit-fill-available',
+              fontFamily: 'Playfair Display, serif'
             }}
             onClick={handleSubmit}
           >

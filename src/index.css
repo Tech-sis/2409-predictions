@@ -42,6 +42,22 @@
     box-sizing: border-box;
     border-radius: 10px;
 }
+.ant-card-head .ant-tabs {
+    font-weight: bold;
+}
+.ant-tabs-large>.ant-tabs-nav .ant-tabs-tab {
+    padding: 0;
+}
+.ant-input-affix-wrapper>input.ant-input {
+    font-family: 'Playfair Display',
+    serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    text-indent: 4px;
+    line-height: 27px;
+    color: #909090;
+}
 
 
 @media screen and (min-width: 1270px) {
