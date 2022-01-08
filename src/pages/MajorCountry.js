@@ -11,6 +11,14 @@ import {
   Table,
   Button,
 } from 'antd'
+import {
+  EnvironmentOutlined,
+  MailOutlined,
+  PhoneOutlined,
+  TwitterOutlined,
+  InstagramOutlined,
+  YoutubeOutlined,
+} from '@ant-design/icons'
 import styles from '../styles/countries.module.css'
 import stadium from '../assets/stadium.svg'
 import PL from '../assets/Premier_League-Logo 1.svg'
@@ -25,6 +33,9 @@ import vanarama from '../assets/pic_Vanarama-National-League-North-logo-300x85 1
 import SBC from '../assets/PngItem_4901942 1.svg'
 import south from '../assets/south 1.svg'
 import U18 from '../assets/U18PremierLeague.svg'
+import master from '../assets/MasterCard_Logo.svg'
+import verve from '../assets/Verve.svg'
+import visa from '../assets/visa.svg'
 
 const { Title } = Typography
 const { SubMenu } = Menu
@@ -59,7 +70,12 @@ const columns = [
     ),
   },
   {
-    title: 'Premier League',
+    title: () => (
+      <div>
+        <img src={PL} alt="stadium" style={{ width: '30px', height: '30px' }} />
+        <span style={{ paddingLeft: '10px' }}>Premier League</span>
+      </div>
+    ),
     dataIndex: '1',
     key: '1',
   },
@@ -94,13 +110,14 @@ const MajorCountry = () => {
               defaultSelectedKeys={['1']}
               defaultOpenKeys={['sub1']}
               style={{
-                height: '100%',
                 fontSize: '19px',
                 fontFamily: 'Merriweather',
+                borderTop: '5px solid #EB5126',
               }}
               className={styles.siderHead}
             >
               <SubMenu key="sub1" title="Football">
+                <img src={PL} alt="stadium" style={{ width: '30px' }} />
                 <Menu.Item key="1">
                   <div
                     style={{ display: 'flex', justifyContent: 'space-between' }}
@@ -243,6 +260,7 @@ const MajorCountry = () => {
                     padding: '10px 20px',
                     fontSize: '20px',
                     width: '718px',
+                    borderTop: '5px solid #EB5126',
                   }}
                   separator=">"
                 >
@@ -319,7 +337,7 @@ const MajorCountry = () => {
                 </Card>
               </div>
               <div>
-                <div>
+                <div style={{ margin: '20px 0' }}>
                   <Select
                     defaultValue="Upcoming Events"
                     dropdownStyle={{ color: 'white' }}
@@ -327,7 +345,7 @@ const MajorCountry = () => {
                     <Option value="all">All</Option>
                   </Select>
                 </div>
-                <div>
+                <div className={styles.eventsContainer}>
                   <Select
                     defaultValue="Tue 7 Dec"
                     dropdownStyle={{ color: 'white' }}
@@ -353,6 +371,7 @@ const MajorCountry = () => {
                   <Select
                     defaultValue="Fri 17 Dec"
                     dropdownStyle={{ color: 'white' }}
+                    style={{ marginTop: '20px' }}
                   >
                     <Option value="all">All</Option>
                   </Select>
@@ -367,6 +386,7 @@ const MajorCountry = () => {
                   <Select
                     defaultValue="Tue 7 Dec"
                     dropdownStyle={{ color: 'white' }}
+                    style={{ marginTop: '20px' }}
                   >
                     <Option value="all">All</Option>
                   </Select>
@@ -389,6 +409,7 @@ const MajorCountry = () => {
                   <Select
                     defaultValue="Tue 7 Dec"
                     dropdownStyle={{ color: 'white' }}
+                    style={{ marginTop: '20px' }}
                   >
                     <Option value="all">All</Option>
                   </Select>
@@ -408,7 +429,7 @@ const MajorCountry = () => {
                     size="small"
                     pagination={false}
                   />
-                  <Button>Show more</Button>
+                  <Button className={styles.eventsMore}>Show more</Button>
                 </div>
               </div>
             </div>
@@ -430,29 +451,52 @@ const MajorCountry = () => {
         </Layout>
       </Content>
       <Footer>
-        <div>
-          <div>
-            <h6>ORAQL</h6>
+        <div className={styles.footerContainer}>
+          <div className={styles.info}>
+            <h6 className={styles.brandname}> ORAQL</h6>
             <p>
               Diam dolores sit invidunt gubergren et consetetur est. Sed erat at
               diam nonumy sed kasd, sea elitr est sit rebum. Diam dolores sit
               invidunt gubergren et consetetur est. Sed erat at diam nonumy sed
               kasd, sea elitr est sit rebum.
             </p>
-            <img src="" alt="twitter"></img>
-            <img src="" alt="twitter"></img>
-            <img src="" alt="twitter"></img>
+            <TwitterOutlined
+              style={{ marginRight: '20px', fontSize: '20px' }}
+            />
+            <InstagramOutlined
+              style={{ marginRight: '20px', fontSize: '20px' }}
+            />
+            <YoutubeOutlined
+              style={{ marginRight: '20px', fontSize: '20px' }}
+            />
           </div>
-          <div>
-            <h6>Contact</h6>
-            <p>13, Gregory Avenue, Frrankfrut Germany</p>
-            <p>+49 144 59 783</p>
-            <p>oraqlprtdz@gmail.com</p>
+          <div className={styles.contact}>
+            <h6 className={styles.contactInfo}>Contact</h6>
+            <div style={{ display: 'flex' }}>
+              <EnvironmentOutlined />
+              <p style={{ marginLeft: '10px' }}>
+                13, Gregory Avenue, Frrankfrut Germany
+              </p>
+            </div>
+            <div style={{ display: 'flex' }}>
+              <PhoneOutlined />
+              <p style={{ marginLeft: '10px' }}>+49 144 59 783</p>
+            </div>
+            <div style={{ display: 'flex' }}>
+              <MailOutlined />
+              <p style={{ marginLeft: '10px' }}>oraqlprtdz@gmail.com</p>
+            </div>
           </div>
         </div>
-        <div>
-          <p>Payment method we accepts</p>
+        <div style={{ textAlign: 'center' }}>
+          <p>PAYMENT METHODS WE ACCEPTS</p>
+          <img src={master} alt="master" style={{ marginLeft: '20px' }} />
+          <img src={visa} alt="master" style={{ marginLeft: '20px' }} />
+          <img src={verve} alt="master" style={{ marginLeft: '20px' }} />
         </div>
+        <p style={{ textAlign: 'center', marginTop: '20px' }}>
+          &copy; 2021 ORAQL - All Rights Reserved, Privacy & Cookie Policy
+        </p>
       </Footer>
     </Layout>
   )
