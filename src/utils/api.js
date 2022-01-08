@@ -1,4 +1,4 @@
-export const BASEAPI = process.env.REACT_APP_BASEAPI
+export const BASEAPI = process.env.REACT_APP_BASE_API
 const token = localStorage.getItem('token') || ''
 
 const api = async (url, method, data) => {
@@ -11,7 +11,7 @@ const api = async (url, method, data) => {
     },
     body: JSON.stringify(data),
   })
-    return await result.json()
+  return await result.json()
 }
 
 export default api

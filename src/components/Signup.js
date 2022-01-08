@@ -22,8 +22,32 @@ const Signup = () => {
     console.log(data)
     const response = api('user/signup/', 'POST', data)
     console.log(response)
-    localStorage.setItem('user', JSON.stringify(response.data))
-    navigate('/sports')
+    if (response.ok === 201) {
+      localStorage.setItem('user', JSON.stringify(response.data))
+      navigate('/sports')
+    } else {
+      alert('There is an error')
+    }
+
+  //   fetch('coffee.jpg')
+  //     .then((response) => {
+  //       if (!response.ok) {
+  //         throw new Error(`HTTP error! status: ${response.status}`)
+  //       } else {
+  //         return response.blob()
+  //       }
+  //     })
+  //     .then((myBlob) => {
+  //       let objectURL = URL.createObjectURL(myBlob)
+  //       let image = document.createElement('img')
+  //       image.src = objectURL
+  //       document.body.appendChild(image)
+  //     })
+  //     .catch((e) => {
+  //       console.log(
+  //         'There has been a problem with your fetch operation: ' + e.message
+  //       )
+  //     })
   }
 
   return (
@@ -106,7 +130,7 @@ const Signup = () => {
               background: '#001E8B',
               borderColor: '#001E8B',
               width: '-webkit-fill-available',
-              fontFamily: 'Playfair Display, serif'
+              fontFamily: 'Playfair Display, serif',
             }}
             onClick={handleSubmit}
           >

@@ -1,4 +1,16 @@
-import { Breadcrumb, Layout, Menu, Card, Image, Typography } from 'antd'
+import React from 'react'
+import { Link } from 'react-router-dom'
+import {
+  Breadcrumb,
+  Layout,
+  Menu,
+  Card,
+  Image,
+  Typography,
+  Select,
+  Table,
+  Button,
+} from 'antd'
 import styles from '../styles/countries.module.css'
 import stadium from '../assets/stadium.svg'
 import PL from '../assets/Premier_League-Logo 1.svg'
@@ -17,14 +29,49 @@ import U18 from '../assets/U18PremierLeague.svg'
 const { Title } = Typography
 const { SubMenu } = Menu
 const { Header, Content, Footer, Sider } = Layout
+const { Option } = Select
 
 const gridStyle = {
-  width: '97px',
+  width: '80px',
   textAlign: 'center',
-  margin: '10px',
+  margin: '10px 12px',
   height: '130px',
   padding: '10px',
   backgroundColor: '#fff',
+  border: '1px solid #A2BFF8',
+  borderRadius: '10px',
+}
+
+const columns = [
+  {
+    title: 'Time',
+    dataIndex: 'time',
+    key: 'time',
+    width: 100,
+    fixed: 'left',
+    render: (text, record) => (
+      <span>
+        {record.time}
+        {/* <Link to={'./fixture'} style={{ padding: '10px' }}>
+          {text}
+        </Link> */}
+      </span>
+    ),
+  },
+  {
+    title: 'Premier League',
+    dataIndex: '1',
+    key: '1',
+  },
+]
+
+const data = []
+for (let i = 0; i <= 2; i++) {
+  data.push({
+    key: '1',
+    1: 'Everton vs Arsenal',
+    time: '16:00',
+  })
 }
 
 const MajorCountry = () => {
@@ -54,19 +101,81 @@ const MajorCountry = () => {
               className={styles.siderHead}
             >
               <SubMenu key="sub1" title="Football">
-                {/* <Menu.Item key="1">option1</Menu.Item>
-                  <Menu.Item key="2">option2</Menu.Item>
-                  <Menu.Item key="3">option3</Menu.Item>
-                  <Menu.Item key="4">option4</Menu.Item> */}
+                <Menu.Item key="1">
+                  <div
+                    style={{ display: 'flex', justifyContent: 'space-between' }}
+                  >
+                    <div>England</div>
+                    <div>+139</div>
+                  </div>
+                </Menu.Item>
+                <Menu.Item key="2">
+                  <div
+                    style={{ display: 'flex', justifyContent: 'space-between' }}
+                  >
+                    <div>France</div>
+                    <div>+112</div>
+                  </div>
+                </Menu.Item>
+                <Menu.Item key="3">
+                  <div
+                    style={{ display: 'flex', justifyContent: 'space-between' }}
+                  >
+                    <div>Italy</div>
+                    <div>+45</div>
+                  </div>
+                </Menu.Item>
+                <Menu.Item key="4">
+                  <div
+                    style={{ display: 'flex', justifyContent: 'space-between' }}
+                  >
+                    <div>Spain</div>
+                    <div>+45</div>
+                  </div>
+                </Menu.Item>
+                <Menu.Item key="5">
+                  <div
+                    style={{ display: 'flex', justifyContent: 'space-between' }}
+                  >
+                    <div>Portugal</div>
+                    <div>+45</div>
+                  </div>
+                </Menu.Item>
+                <Menu.Item key="6">
+                  <div
+                    style={{ display: 'flex', justifyContent: 'space-between' }}
+                  >
+                    <div>Netherlands</div>
+                    <div>+45</div>
+                  </div>
+                </Menu.Item>
+                <Menu.Item key="7">
+                  <div
+                    style={{ display: 'flex', justifyContent: 'space-between' }}
+                  >
+                    <div>Belgium</div>
+                    <div>+45</div>
+                  </div>
+                </Menu.Item>
+                <Menu.Item key="8">
+                  <div
+                    style={{ display: 'flex', justifyContent: 'space-between' }}
+                  >
+                    <div>Scotland</div>
+                    <div>+45</div>
+                  </div>
+                </Menu.Item>
+                <Menu.Item key="9">
+                  <div
+                    style={{ display: 'flex', justifyContent: 'space-between' }}
+                  >
+                    <div>Turkey</div>
+                    <div>+45</div>
+                  </div>
+                </Menu.Item>
               </SubMenu>
-              <SubMenu key="sub2" title="Basketball">
-                <Menu.Item key="5">option5</Menu.Item>
-                <Menu.Item key="6">option6</Menu.Item>
-                <Menu.Item key="7">option7</Menu.Item>
-                <Menu.Item key="8">option8</Menu.Item>
-              </SubMenu>
+              <SubMenu key="sub2" title="Basketball"></SubMenu>
               <SubMenu key="sub3" title="American Football">
-                <Menu.Item key="9">option9</Menu.Item>
                 <Menu.Item key="10">option10</Menu.Item>
                 <Menu.Item key="11">option11</Menu.Item>
                 <Menu.Item key="12">option12</Menu.Item>
@@ -117,7 +226,7 @@ const MajorCountry = () => {
           </Sider>
           <Content
             style={{
-              padding: '0 24px',
+              padding: '0 21px 0 0',
               minHeight: 280,
               maxWidth: '760px',
               backgroundColor: 'white',
@@ -133,6 +242,7 @@ const MajorCountry = () => {
                     height: '48px',
                     padding: '10px 20px',
                     fontSize: '20px',
+                    width: '718px',
                   }}
                   separator=">"
                 >
@@ -146,7 +256,7 @@ const MajorCountry = () => {
                 </Breadcrumb>
               </div>
             </div>
-            <div>
+            <div className={styles.topLeagueContainer}>
               <button className={styles.topleague}>Top Leagues</button>
               <div>
                 <Card className={styles.carddiv}>
@@ -184,50 +294,123 @@ const MajorCountry = () => {
                   </Card.Grid>
                   <Card.Grid style={gridStyle}>
                     <Image src={vanarama} />
-                    <p>National League North</p>
+                    <p style={{ marginTop: '25px' }}>National League North</p>
                   </Card.Grid>
                   <Card.Grid style={gridStyle}>
                     <Image src={south} />
-                    <p>National League South</p>
+                    <p style={{ marginTop: '25px' }}>National League South</p>
                   </Card.Grid>
                   <Card.Grid style={gridStyle}>
                     <Image src={DL} />
-                    {/* <p>Professional Development League</p> */}
+                    <p>Professional Development League</p>
                   </Card.Grid>
                   <Card.Grid style={gridStyle}>
                     <Image src={U18} />
                     <p>U-18 Premier League</p>
                   </Card.Grid>
+                  <div style={{ float: 'right', marginRight: '15px' }}>
+                    <Select
+                      defaultValue="All"
+                      dropdownStyle={{ color: 'white' }}
+                    >
+                      <Option value="all">All</Option>
+                    </Select>
+                  </div>
                 </Card>
               </div>
-            </div>
-            <div>
-              Voluptua lorem rebum justo at sit justo diam amet. Sadipscing kasd
-              amet et accusam ea at dolores amet, et elitr nonumy lorem ipsum.
-              Sea sit dolores takimata duo dolor sea rebum. Clita sed sed erat
-              erat clita diam lorem dolores, stet amet justo ipsum diam accusam
-              ipsum dolore, lorem vero.
-            </div>
-            <div>
-              Voluptua lorem rebum justo at sit justo diam amet. Sadipscing kasd
-              amet et accusam ea at dolores amet, et elitr nonumy lorem ipsum.
-              Sea sit dolores takimata duo dolor sea rebum. Clita sed sed erat
-              erat clita diam lorem dolores, stet amet justo ipsum diam accusam
-              ipsum dolore, lorem vero.
-            </div>
-            <div>
-              Voluptua lorem rebum justo at sit justo diam amet. Sadipscing kasd
-              amet et accusam ea at dolores amet, et elitr nonumy lorem ipsum.
-              Sea sit dolores takimata duo dolor sea rebum. Clita sed sed erat
-              erat clita diam lorem dolores, stet amet justo ipsum diam accusam
-              ipsum dolore, lorem vero.
-            </div>
-            <div>
-              Voluptua lorem rebum justo at sit justo diam amet. Sadipscing kasd
-              amet et accusam ea at dolores amet, et elitr nonumy lorem ipsum.
-              Sea sit dolores takimata duo dolor sea rebum. Clita sed sed erat
-              erat clita diam lorem dolores, stet amet justo ipsum diam accusam
-              ipsum dolore, lorem vero.
+              <div>
+                <div>
+                  <Select
+                    defaultValue="Upcoming Events"
+                    dropdownStyle={{ color: 'white' }}
+                  >
+                    <Option value="all">All</Option>
+                  </Select>
+                </div>
+                <div>
+                  <Select
+                    defaultValue="Tue 7 Dec"
+                    dropdownStyle={{ color: 'white' }}
+                  >
+                    <Option value="all">All</Option>
+                  </Select>
+                  <Table
+                    columns={columns}
+                    dataSource={data}
+                    scroll={{ y: 500 }}
+                    bordered
+                    size="small"
+                    pagination={false}
+                  />
+                  <Table
+                    columns={columns}
+                    dataSource={data}
+                    scroll={{ y: 500 }}
+                    bordered
+                    size="small"
+                    pagination={false}
+                  />
+                  <Select
+                    defaultValue="Fri 17 Dec"
+                    dropdownStyle={{ color: 'white' }}
+                  >
+                    <Option value="all">All</Option>
+                  </Select>
+                  <Table
+                    columns={columns}
+                    dataSource={data}
+                    scroll={{ y: 500 }}
+                    bordered
+                    size="small"
+                    pagination={false}
+                  />
+                  <Select
+                    defaultValue="Tue 7 Dec"
+                    dropdownStyle={{ color: 'white' }}
+                  >
+                    <Option value="all">All</Option>
+                  </Select>
+                  <Table
+                    columns={columns}
+                    dataSource={data}
+                    scroll={{ y: 500 }}
+                    bordered
+                    size="small"
+                    pagination={false}
+                  />
+                  <Table
+                    columns={columns}
+                    dataSource={data}
+                    scroll={{ y: 500 }}
+                    bordered
+                    size="small"
+                    pagination={false}
+                  />
+                  <Select
+                    defaultValue="Tue 7 Dec"
+                    dropdownStyle={{ color: 'white' }}
+                  >
+                    <Option value="all">All</Option>
+                  </Select>
+                  <Table
+                    columns={columns}
+                    dataSource={data}
+                    scroll={{ y: 500 }}
+                    bordered
+                    size="small"
+                    pagination={false}
+                  />
+                  <Table
+                    columns={columns}
+                    dataSource={data}
+                    scroll={{ y: 500 }}
+                    bordered
+                    size="small"
+                    pagination={false}
+                  />
+                  <Button>Show more</Button>
+                </div>
+              </div>
             </div>
           </Content>
           <Sider width={250}>
@@ -246,6 +429,31 @@ const MajorCountry = () => {
           </Sider>
         </Layout>
       </Content>
+      <Footer>
+        <div>
+          <div>
+            <h6>ORAQL</h6>
+            <p>
+              Diam dolores sit invidunt gubergren et consetetur est. Sed erat at
+              diam nonumy sed kasd, sea elitr est sit rebum. Diam dolores sit
+              invidunt gubergren et consetetur est. Sed erat at diam nonumy sed
+              kasd, sea elitr est sit rebum.
+            </p>
+            <img src="" alt="twitter"></img>
+            <img src="" alt="twitter"></img>
+            <img src="" alt="twitter"></img>
+          </div>
+          <div>
+            <h6>Contact</h6>
+            <p>13, Gregory Avenue, Frrankfrut Germany</p>
+            <p>+49 144 59 783</p>
+            <p>oraqlprtdz@gmail.com</p>
+          </div>
+        </div>
+        <div>
+          <p>Payment method we accepts</p>
+        </div>
+      </Footer>
     </Layout>
   )
 }

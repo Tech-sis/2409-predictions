@@ -7,34 +7,12 @@
   
 }
 .layout{
-    background-color: #E5E5E5;
+    background-color: #E5E5E5 !important;
     overflow-y: auto;
     scroll-behavior: auto;
     scroll-snap-align: start;
     scroll-snap-type: y mandatory;
 }
-    /* scroll-behavior: smooth; */
-
-/* ::-webkit-scrollbar {
-    width: 10px;  
-    background: grey; 
-}
-::-webkit-scrollbar-thumb {
-    background: #FF0000;
-}
-::-webkit-scrollbar-button {
-    width: 10px;
-    height: 10px;
-}
-::-webkit-scrollbar-track {
-    background: #FF0000;
-}
-::-webkit-scrollbar-corner {
-    background: #FF0000;
-}
-.sitelayoutbackground {
-    overflow-y: scroll;
-} */
 .siderHead{
     background-color: #061B65 !important;
     color: #939393 !important;
@@ -67,7 +45,7 @@ p {
 .topleague{
     background: #002368;
     border-radius: 5px;
-        margin: 15px;
+        margin: 15px 0;
         color: white;
         padding: 15px;
 }
@@ -76,3 +54,8 @@ p {
     border: 1px solid rgba(35, 137, 144, 1);
     border-radius: 10px;
 }
+.topLeagueContainer{
+    padding: 0 30px;
+}
+
+

@@ -41,6 +41,7 @@
     border: 1px solid #238990;
     box-sizing: border-box;
     border-radius: 10px;
+    padding: 35px 25px;
 }
 .ant-card-head .ant-tabs {
     font-weight: bold;
@@ -69,6 +70,13 @@
 }
 .ant-list-item-meta-title {
     font-family: 'Roboto', sans-serif;
+}
+.ant-menu-sub.ant-menu-inline {
+    background: #F1F2F5;
+}
+.ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    background-color: #002368;
+    color: white;
 }
 
 
