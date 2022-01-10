@@ -1,13 +1,55 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Form, Input, Button, Checkbox } from 'antd'
 import { LockOutlined, MailOutlined, UserOutlined } from '@ant-design/icons'
 import styles from '../styles/login.module.css'
 import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router'
+import api from '../utils/api'
 
 const Signup = () => {
-  const onFinish = (values) => {
-    console.log('Received values of form: ', values)
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const navigate = useNavigate()
+
+  async function handleSubmit(e) {
+    e.preventDefault()
+    const data = {
+      name,
+      email,
+      password,
+    }
+    console.log(data)
+    const response = api('user/signup/', 'POST', data)
+    console.log(response)
+    if (response.ok === 201) {
+      localStorage.setItem('user', JSON.stringify(response.data))
+      navigate('/sports')
+    } else {
+      alert('There is an error')
+    }
+
+  //   fetch('coffee.jpg')
+  //     .then((response) => {
+  //       if (!response.ok) {
+  //         throw new Error(`HTTP error! status: ${response.status}`)
+  //       } else {
+  //         return response.blob()
+  //       }
+  //     })
+  //     .then((myBlob) => {
+  //       let objectURL = URL.createObjectURL(myBlob)
+  //       let image = document.createElement('img')
+  //       image.src = objectURL
+  //       document.body.appendChild(image)
+  //     })
+  //     .catch((e) => {
+  //       console.log(
+  //         'There has been a problem with your fetch operation: ' + e.message
+  //       )
+  //     })
   }
+
   return (
     <div>
       <Form
@@ -16,7 +58,7 @@ const Signup = () => {
         initialValues={{
           remember: true,
         }}
-        onFinish={onFinish}
+        // onFinish={onFinish}
       >
         <Form.Item
           name="name"
@@ -30,6 +72,8 @@ const Signup = () => {
           <Input
             prefix={<UserOutlined className="site-form-item-icon" />}
             placeholder="Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
         </Form.Item>
         <Form.Item
@@ -44,6 +88,8 @@ const Signup = () => {
           <Input
             prefix={<MailOutlined className="site-form-item-icon" />}
             placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </Form.Item>
         <Form.Item
@@ -59,11 +105,13 @@ const Signup = () => {
             prefix={<LockOutlined className="site-form-item-icon" />}
             type="password"
             placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Item>
         <Form.Item>
           <Form.Item name="agreement" valuePropName="checked" noStyle>
-            <Checkbox>
+            <Checkbox className={styles.agreement}>
               By creating an account, you agree to the {''}
               <Link to="/">Terms of Service</Link> and {''}
               <Link to="/">Conditions</Link> & {''}
@@ -79,10 +127,12 @@ const Signup = () => {
             htmlType="submit"
             className={styles.loginformbutton}
             style={{
-              background: '#410369',
-              borderColor: '#410369',
-              width: '-webkit-fill-available'
+              background: '#001E8B',
+              borderColor: '#001E8B',
+              width: '-webkit-fill-available',
+              fontFamily: 'Playfair Display, serif',
             }}
+            onClick={handleSubmit}
           >
             Sign Up
           </Button>

@@ -1,12 +1,13 @@
-body{
-    background-color: #242582;
-}
-
 .fix{
     margin: auto;
     width: 90%;
     height: 100%;
     /* background-color: rgba(0,0,0,0.5); */
+   
+}
+
+.background{
+     background-color: teal;
 }
 
 .club{

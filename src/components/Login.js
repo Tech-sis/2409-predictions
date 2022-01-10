@@ -1,12 +1,32 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Form, Input, Button, Checkbox } from 'antd'
 import { LockOutlined, MailOutlined } from '@ant-design/icons'
 import styles from '../styles/login.module.css'
+// import axios from 'axios'
+import { useNavigate } from 'react-router'
+import api from '../utils/api'
+// import {useHistory} from 'react-router-dom'
 
 const Login = () => {
-  const onFinish = (values) => {
-    console.log('Received values of form: ', values)
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
+  const navigate = useNavigate()
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setLoading(true)
+    const data = {
+      email,
+      password,
+    }
+    console.log(data)
+    const response = api('user/signin/', 'POST', data)
+    localStorage.setItem('user', JSON.stringify(response.data))
+    navigate('/sports')
   }
+
   return (
     <div>
       <Form
@@ -15,7 +35,7 @@ const Login = () => {
         initialValues={{
           remember: true,
         }}
-        onFinish={onFinish}
+        // onFinish={onFinish}
       >
         <Form.Item
           name="email"
@@ -29,6 +49,8 @@ const Login = () => {
           <Input
             prefix={<MailOutlined className="site-form-item-icon" />}
             placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </Form.Item>
         <Form.Item
@@ -40,15 +62,17 @@ const Login = () => {
             },
           ]}
         >
-          <Input
+          <Input.Password
             prefix={<LockOutlined className="site-form-item-icon" />}
             type="password"
             placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Item>
-        <Form.Item>
-          <Form.Item name="remember" valuePropName="checked" noStyle>
-            <Checkbox>Remember me</Checkbox>
+        <Form.Item >
+          <Form.Item name="remember" noStyle>
+            <Checkbox className={styles.RemPass}>Remember me</Checkbox>
           </Form.Item>
 
           <a className={styles.loginformforgot} href="/">
@@ -63,14 +87,17 @@ const Login = () => {
             htmlType="submit"
             className={styles.loginformbutton}
             style={{
-              background: '#410369',
-              borderColor: '#410369',
+              background: '#001E8B',
+              borderColor: '#001E8B',
               width: '-webkit-fill-available',
             }}
+            onClick={handleSubmit}
+            loading={loading}
           >
             Log in
           </Button>
         </Form.Item>
+        <div className={styles.login__error}>{error}</div>
       </Form>
     </div>
   )

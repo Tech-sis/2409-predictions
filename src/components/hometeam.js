@@ -1,7 +1,7 @@
 import React from 'react'
 import { Table } from 'antd'
 import styles from '../styles/fixturehome.module.css'
-import Awayteam from './awayteam'
+import Awayteam from './Awayteam'
 import { Link } from 'react-router-dom'
 
 const columns = [

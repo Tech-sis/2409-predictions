@@ -1,26 +1,33 @@
-// import './App.css';
-import React from 'react';
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import React from 'react'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 // Components
-// import Header from './components/header';
+// import NavHeader from './components/header'
 
 // Pages
-import Home from './pages/home';
-import RegistrationPage from './pages/RegistrationPage';
-import Fixture from './pages/fixturehome'
+import Home from './pages/Home'
+import RegistrationPage from './pages/RegistrationPage'
+import Fixture from './pages/Fixturehome'
+import Sports from './pages/Sports'
+import Countries from './pages/Countries'
+import MajorCountry from './pages/MajorCountry'
 
-function App () {
+function App() {
   return (
-    <Router>
-      {/* <Header /> */}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<RegistrationPage />} />
-        <Route path="/fixture" element={<Fixture />} />
-      </Routes>
-    </Router>
+    <div>
+      <Router>
+        {/* <NavHeader /> */}
+        <Routes>
+          <Route path="/" element={<RegistrationPage />} />
+          <Route path="/landing" element={<Home />} />
+          <Route path="/fixture" element={<Fixture />} />
+          <Route path="/sports" element={<Sports />} />
+          <Route path="/countries" element={<Countries />} />
+          <Route path="/country" element={<MajorCountry />} />
+        </Routes>
+      </Router>
+    </div>
   )
 }
 
-export default App;
+export default App
